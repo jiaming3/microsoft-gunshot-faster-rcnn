@@ -17,12 +17,12 @@ The above conditions challenge audio classification method like MFCC with CNN. H
 tensorflow 1.13-gpu (CUDA 10.0)\
 keras 2.1.5\
 h5py  2.10.0
+model: retrain.hdf5 can be download from https://drive.google.com/drive/folders/1AswdCXlv3cxjgTwge2dIbkBxJv8ztLMF?usp=sharing
 
 The more detailed tutorial on setting up can be found on https://r15hil.github.io/ICL-Project15-ELP/gettingstarted.html.
 
-#  Pre-trained mode
+#  Pre-trained model
 
-The lastest model is providel in .........
 The lastest model is trained under multi-classes dataset including AK-47 gunshot, shotgun, monkey, thunder and hn, where hn represent hard negative. Hard negative are those high frequency mistake made by current detector, which are mostly peak without echo. Any sound have shape of the raindrop (just peak without echo) but can be appeared in different frequency domain with raindrop. The initial model is only train with gunshot and hn dataset due to limited given manual dataset. Then the network test under low threhold vaule, e.g.0.6 to obtain more false positive dataset or true gunshot among thoundsand hours forest sound file testing. The model will then use those hard negatives to re-train. This technic also call hard mining. The following images Figure.2 show three hard negative dataset (monkey, thunder, hn) that used to train the lastest model.  
 
 ![fp2](https://user-images.githubusercontent.com/60019124/122781894-d3a24100-d2e2-11eb-9d14-446aeb976629.png)
@@ -57,6 +57,9 @@ The number of hard negative dataset are still limited after 400 hours sound clip
 
 Figure5. Mel-spectrum image of strong thunder and bee
 
+# Reference
+
+https://github.com/yhenon/keras-rcnn
 
 
 
